@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            height: 300px;
+            width: 250px;
+            background-image: conic-gradient(red, yellow, green, blue, black);            margin: auto;
+        }
+        .box{
+            margin: auto;
+            width: 100%;
+            margin-top: 20px;
+            padding-top: 10px;
+           text-align: center;
+        }
+        input{
+            height: 20px;
+
+        }
+
+        .box2{
+            margin: auto;
+            width: 100%;
+            text-align: center;
+            height: auto;
+            background-color: blue;
+        }
+        .input2{
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+  
+    <div class="w3-content w3-display-container">
+        <img class="mySlides" src="img_snowtops.jpg" style="width:100%">
+        <img class="mySlides" src="img_lights.jpg" style="width:100%">
+        <img class="mySlides" src="img_mountains.jpg" style="width:100%">
+        <img class="mySlides" src="img_forest.jpg" style="width:100%">
+      
+        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+      </div>
+      
+      <script>
+      var slideIndex = 1;
+      showDivs(slideIndex);
+      
+      function plusDivs(n) {
+        showDivs(slideIndex += n);
+      }
+      
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  
+        }
+        x[slideIndex-1].style.display = "block";  
+      }
+      </script>
+
+
+
+
+
+    <div class="box1">
+        <div class="box">
+            <input type="text" id="input">
+            <button onclick="addItem()">Add</button>
+
+            <input class="input2" type="text" id="input">
+            <button onclick="addItem()">Add</button>
+        </div>
+       <div class="box2" id="data">
+      
+        
+       </div>
+    </div>
+    
+    <script>
+        let item=[]
+    function addItem(){
+
+let adddata = document.getElementById('input').value
+item.push(adddata)
+str=''
+for(let i=0;i<item.lenth;i++) {
+    str+='<h5>'+ item[i]+'</h5>'
+}
+ console.log(str);
+ document.getElementById('data').innerHTML=str
+ dicument.getElementById('input').value=''
+
+
+        // let adddata = document.getElementById('input').value
+        // let hfive = document.createElement('h5')
+        // let uppr = adddata.toUpperCase()
+        // hfive.innerHTML=uppr
+        // document.getElementById('data').append(hfive)
+        //  document.getElementById('input').value=''
+    }
+    </script>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+

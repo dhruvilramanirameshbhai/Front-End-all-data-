@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    import React from 'react';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+`;
+
+const Header = styled.header`
+  font-size: 24px;
+  margin-bottom: 20px;
+`;
+
+const ProductGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+`;
+
+const ProductCard = styled.div`
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+`;
+
+const ProductImage = styled.img`
+  max-width: 100%;
+  height: auto;
+`;
+
+const ProductTitle = styled.h3`
+  font-size: 18px;
+  margin: 10px 0;
+`;
+
+const ProductPrice = styled.p`
+  font-size: 16px;
+`;
+
+const HomePage = () => {
+  return (
+    <Container>
+      <Header>Welcome to Our Shop</Header>
+      <ProductGrid>
+        <ProductCard>
+          <ProductImage src="https://via.placeholder.com/200" alt="Product 1" />
+          <ProductTitle>Product 1</ProductTitle>
+          <ProductPrice>$10</ProductPrice>
+        </ProductCard>
+        <ProductCard>
+          <ProductImage src="https://via.placeholder.com/200" alt="Product 2" />
+          <ProductTitle>Product 2</ProductTitle>
+          <ProductPrice>$15</ProductPrice>
+        </ProductCard>
+        {/* Add more ProductCards here */}
+      </ProductGrid>
+    </Container>
+  );
+};
+
+export default HomePage;
+
+</body>
+</html>
